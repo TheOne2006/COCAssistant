@@ -1,0 +1,43 @@
+JFDML JFormDesigner: "7.0.0.5.251" Java: "1.8.0_202-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			"background": sfield java.awt.Color darkGray
+			"title": "COCAssistant1.0 by The_One"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "displayLabel"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 5
+				"y": 10
+				"width": 560
+				"height": 315
+			} )
+			add( new FormComponent( "javax.swing.JTextArea" ) {
+				name: "textArea"
+				"background": sfield java.awt.Color darkGray
+				"foreground": sfield java.awt.Color green
+				"font": new java.awt.Font( "Monospaced", 0, 16 )
+				"editable": false
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 5
+				"y": 365
+				"width": 560
+				"height": 195
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "点击获取截图"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "button1MousePressed", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 440
+				"y": 330
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 575, 600 )
+		} )
+	}
+}

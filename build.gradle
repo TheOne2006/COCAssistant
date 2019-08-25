@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'COCAssistant'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+task "create-dirs" << {
+    sourceSets*.java.srcDirs*.each { it.mkdirs() }
+    sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+//    sourceSets*.groovy.srcDirs*.each { it.mkdirs() }
+} as String
+
+repositories {
+    maven { url 'https://maven.aliyun.com/repository/public' }
+    maven { url 'https://maven.aliyun.com/repository/google' }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile fileTree(dir: 'lib', includes: ['*jar'])
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.8'
+    compile group: 'com.baidu.aip', name: 'java-sdk', version: '4.11.3'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+    compile group: 'org.im4java', name: 'im4java', version: '1.4.0'
+}
